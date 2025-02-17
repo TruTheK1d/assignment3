@@ -31,12 +31,12 @@ app.listen(PORT, () => {
 
 // Route to home page
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "home.html"));
+  res.sendFile(path.join(__dirname, "view", "home.html"));
 });
 
 // Route to about page
 app.get("/about", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "about.html"));
+  res.sendFile(path.join(__dirname, "view", "about.html"));
 });
 
 // Dynamic route for sites
@@ -68,5 +68,5 @@ app.get("/sites/:id", (req, res) => {
 
 // 404 page for all unmatched routes
 app.get("*", (req, res) => {
-  res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
+  res.status(404).sendFile(path.join(__dirname, "view", "404.html"));
 });
