@@ -14,22 +14,20 @@ const siteData = require("./modules/data-service");
 const path = require("path");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; 
 
 // Middleware to serve static files
 app.use(express.static(path.join(__dirname, "public")));
 
-// Initialize the site data
-siteData
-  .initialize()
-  .then(() => {
-    app.listen(PORT, () => {
-      console.log(`Server running on http://localhost:${PORT}`);
-    });
-  })
-  .catch((err) => {
-    console.error("Failed to initialize data:", err);
-  });
+// Start the server first
+app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
+  
+  // Initialize the site data
+  siteData.initialize()
+    .then(() => console.log("✅ Data initialized successfully"))
+    .catch((err) => console.error("❌ Failed to initialize data:", err));
+});
 
 // Route to home page
 app.get("/", (req, res) => {
@@ -41,35 +39,31 @@ app.get("/about", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "about.html"));
 });
 
-// Route to handle sites with dynamic query parameters for region or province/territory
+// Dynamic route for sites
 app.get("/sites", (req, res) => {
   const { region, provinceOrTerritory } = req.query;
 
   if (region) {
-    siteData
-      .getSitesByRegion(region)
+    siteData.getSitesByRegion(region)
       .then((data) => res.json(data))
-      .catch((err) => res.status(404).send(err));
+      .catch(() => res.status(404).json({ error: "Region not found" }));
   } else if (provinceOrTerritory) {
-    siteData
-      .getSitesByProvinceOrTerritoryName(provinceOrTerritory)
+    siteData.getSitesByProvinceOrTerritoryName(provinceOrTerritory)
       .then((data) => res.json(data))
-      .catch((err) => res.status(404).send(err));
+      .catch(() => res.status(404).json({ error: "Province/Territory not found" }));
   } else {
-    siteData
-      .getAllSites()
+    siteData.getAllSites()
       .then((data) => res.json(data))
-      .catch((err) => res.status(500).send(err));
+      .catch(() => res.status(500).json({ error: "Error fetching sites" }));
   }
 });
 
-// Route to handle specific site by ID
+// Route to specific site by ID
 app.get("/sites/:id", (req, res) => {
   const { id } = req.params;
-  siteData
-    .getSiteById(id)
+  siteData.getSiteById(id)
     .then((data) => res.json(data))
-    .catch((err) => res.status(404).send(err));
+    .catch(() => res.status(404).json({ error: "Site not found" }));
 });
 
 // 404 page for all unmatched routes
