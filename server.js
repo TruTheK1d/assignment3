@@ -1,34 +1,13 @@
-/********************************************************************************
-*  WEB322 – Assignment 02
-* 
-*  I declare that this assignment is my own work in accordance with Seneca's
-*  Academic Integrity Policy:
-* 
-*  https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
-* 
-*  Name: Turmunkh Davaajargal Student ID: 164138232 Date: FEB 04 2025
-*
-********************************************************************************/
 const express = require("express");
 const siteData = require("./modules/data-service");
 const path = require("path");
 
 const app = express();
-const PORT = process.env.PORT || 3000; 
+const PORT = process.env.PORT || 3000;
 
 // Middleware to serve static files
 app.use(express.static(path.join(__dirname, "public"))); // Serve all files in "public"
 app.use(express.static(path.join(__dirname, "view")));   // Serve all files in "view"
-
-// Start the server first
-app.listen(PORT, () => {
-  console.log(`✅ Server running on port ${PORT}`);
-  
-  // Initialize the site data
-  siteData.initialize()
-    .then(() => console.log("✅ Data initialized successfully"))
-    .catch((err) => console.error("❌ Failed to initialize data:", err));
-});
 
 // Route to home page
 app.get("/", (req, res) => {
@@ -70,4 +49,14 @@ app.get("/sites/:id", (req, res) => {
 // 404 page for all unmatched routes
 app.get("*", (req, res) => {
   res.status(404).sendFile(path.join(__dirname, "view", "404.html"));
+});
+
+// Start the server
+app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
+
+  // Initialize the site data
+  siteData.initialize()
+    .then(() => console.log("✅ Data initialized successfully"))
+    .catch((err) => console.error("❌ Failed to initialize data:", err));
 });
