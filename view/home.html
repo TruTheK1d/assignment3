@@ -1,65 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>National Historic Sites</title>
-    <link rel="stylesheet" href="/css/main.css" />
-  </head>
-  <body>
-    <!-- Navbar -->
-    <div class="navbar bg-base-100">
-      <div class="flex-1">
-        <a href="/" class="btn btn-ghost normal-case text-xl">
-          National Historic Sites
-          <img src="/path/to/flag.png" alt="Flag" class="w-6 h-6 ml-2" />
-        </a>
-      </div>
-      <div class="navbar-center hidden sm:flex">
-        <ul class="menu menu-horizontal px-1">
-          <li><a href="/about">About</a></li>
-          <li>
-            <details>
-              <summary>Region</summary>
-              <ul class="p-2 bg-base-100 right-0">
-                <li><a href="/sites?region=Central Canada">Central Canada</a></li>
-                <li><a href="/sites?region=Western Canada">Western Canada</a></li>
-                <!-- Add more regions as needed -->
-              </ul>
-            </details>
-          </li>
-        </ul>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>National Historic Sites</title>
+  <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar bg-base-100">
+    <div class="flex-1">
+      <a href="/" class="btn btn-ghost normal-case text-xl">
+        National Historic Sites
+        <img src="/image/flag.png" alt="Flag" class="flag-icon" />
+      </a>
+    </div>
+    <div class="flex-none">
+      <ul class="menu menu-horizontal px-1">
+        <li><a href="/about">About</a></li>
+        <li>
+          <details>
+            <summary>Region</summary>
+            <ul class="p-2 bg-base-100">
+              <li><a href="/sites?region=Central Canada">Central Canada</a></li>
+              <li><a href="/sites?region=West Coast">West Coast</a></li>
+              <li><a href="/sites?region=Atlantic Region">Atlantic Region</a></li>
+              <li><a href="/sites?region=North">North</a></li>
+              <li><a href="/sites?region=Prairie Provinces">Prairie Provinces</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero min-h-[400px] bg-base-200">
+    <div class="hero-content text-center">
+      <div class="max-w-md">
+        <h1 class="text-5xl font-bold">Welcome</h1>
+        <p class="py-6">Browse National Historic Sites located across ten provinces and three territories of Canada.</p>
+        <a href="/sites" class="btn btn-primary">Get Started Now</a>
       </div>
     </div>
+  </div>
 
-    <!-- Hero Section -->
-    <div class="container mx-auto">
-      <div class="hero bg-base-200">
-        <div class="hero-content text-center">
-          <h1 class="text-5xl font-bold">Explore National Historic Sites</h1>
-          <p class="py-6">Discover the rich history of Canada.</p>
-          <a href="/sites" class="btn btn-primary">View All Sites</a>
-        </div>
-      </div>
-
-      <!-- Grid of Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
-        <div class="card w-96 bg-base-100 shadow-xl">
-          <figure>
-            <img src="/path/to/site1.jpg" alt="Site 1" />
-          </figure>
-          <div class="card-body">
-            <h2 class="card-title">Site Name 1</h2>
-            <p>Description of Site 1</p>
-            <p>Date: 1900 (Established)</p>
-            <p>Location: Ottawa, ON</p>
-            <div class="card-actions justify-end">
-              <a href="/sites/ON001" class="btn btn-primary">View Details</a>
-            </div>
+  <!-- Main Content -->
+  <div class="container mx-auto p-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <!-- Westmount District -->
+      <div class="card bg-base-100 shadow-xl">
+        <figure>
+          <img src="/image/westmount.jpg" alt="Westmount District" class="w-full h-48 object-cover" />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Westmount District</h2>
+          <p>The historic district of Westmount which epitomizes the architectural styles and trends in landscape architecture of 1890 to 1930; reflects the efforts of local citizens who, from the early 20th century onwards, sought to protect the diversity and historic integrity of the district's built environment</p>
+          <p><strong>Date:</strong> 1874 (city incorporated)</p>
+          <p><strong>Location:</strong> Westmount, QC</p>
+          <div class="card-actions justify-end">
+            <a href="/sites/QC001" class="btn btn-primary">View</a>
           </div>
         </div>
-        <!-- Repeat for other sites -->
+      </div>
+
+      <!-- Public Grounds of the Parliament Buildings -->
+      <div class="card bg-base-100 shadow-xl">
+        <figure>
+          <img src="/image/parliement.jpg" alt="Public Grounds of the Parliament Buildings" class="w-full h-48 object-cover" />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Public Grounds of the Parliament Buildings</h2>
+          <p>The focal point for national celebrations in Ottawa; the grounds were originally designed by Calvert Vaux, and since supplemented by 18 monuments and memorials</p>
+          <p><strong>Date:</strong> 1875 (initial completion)</p>
+          <p><strong>Location:</strong> Ottawa, ON</p>
+          <div class="card-actions justify-end">
+            <a href="/sites/ON016" class="btn btn-primary">View</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gouinlock Buildings / Early Exhibition Buildings -->
+      <div class="card bg-base-100 shadow-xl">
+        <figure>
+          <img src="/image/gouinlock.jpg" alt="Gouinlock Buildings" class="w-full h-48 object-cover" />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Gouinlock Buildings / Early Exhibition Buildings</h2>
+          <p>Five buildings (the Fire Hall/Police Station, Government Building, Horticulture Building, Music Building and Press Building) on the grounds of the Canadian National Exhibition; the largest and finest group of early 20th century exhibition buildings in Canada</p>
+          <p><strong>Date:</strong> 1912 (completed)</p>
+          <p><strong>Location:</strong> Toronto, ON</p>
+          <div class="card-actions justify-end">
+            <a href="/sites/ON025" class="btn btn-primary">View</a>
+          </div>
+        </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>

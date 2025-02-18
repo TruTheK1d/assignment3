@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About - National Historic Sites</title>
-    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
     <!-- Navbar -->
@@ -12,14 +12,13 @@
       <div class="flex-1">
         <a href="/" class="btn btn-ghost normal-case text-xl">
           National Historic Sites
-          <img src="/path/to/flag.png" alt="Flag" class="w-6 h-6 ml-2" />
+          <img src="/image/flag.png" alt="Flag" class="flag-icon" />
         </a>
       </div>
       <div class="navbar-center hidden sm:flex">
         <ul class="menu menu-horizontal px-1">
           <li><a href="/">Home</a></li>
           <li><a class="active" href="/about">About</a></li>
-          <!-- Add Region Dropdown if needed -->
         </ul>
       </div>
     </div>
@@ -29,20 +28,41 @@
       <div class="hero bg-base-200">
         <div class="hero-content text-center">
           <h1 class="text-5xl font-bold">About</h1>
-          <p class="py-6">All about me</p>
+          <p class="py-6">Everything you want to know about me - third sem student.</p>
         </div>
       </div>
 
-      <!-- Grid with Image and Text -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
-        <div>
-          <img src="/path/to/your-image.jpg" alt="Your Image" class="w-full" />
+      <!-- About Content -->
+      <div class="about-content">
+        <!-- Image Section -->
+        <div class="flex justify-center">
+          <img
+            src="/image/seneca.png"
+            alt="Seneca College"
+            class="about-image"
+          />
         </div>
-        <div>
-          <h2 class="text-2xl font-bold">Turmunkh Davaajargal</h2>
-          <p>My name is Turmunkh Davaajargal.</p>
+
+        <!-- Text Section -->
+        <div class="about-text px-4">
+          <h2 class="text-2xl font-bold mb-4">Turmunkh Davaajargal</h2>
+          <p class="text-lg">
+            My name is Turmunkh Davaajargal. I'm a student at Seneca College.
+          </p>
+          <p class="text-lg mt-4">
+            Donec sollicitudin molestie tortor, vei feugiat nulla maximus quis. Suspendisse
+            ut sapien id mauris sollicitudin commodo. Quisque semper, ligula et tincidunt
+            dapibus, nisi ante fermentum lectus, nec molestie sem eros vel neque. Duis sit
+            amet ligula eu ligula consectetur blandit sed at mi. Sed ac odio aliquet,
+            vestibulum justo eget, volutpat eros. Mauris a dictum erat. Vivamus sodales
+            egestas tempus. Duis pulvinar nibh enim, vel gravida nunc egestas id. Duis
+            magna ante, posuere id luctus id, mattis at ipsum. Nullam sit amet magna et
+            dul varius tristique ac id nisi. Pellentesque est dolor, luctus vitae dictum ut,
+            henderit lacinia lorem. Nullam a pharetra tortor.
+          </p>
         </div>
       </div>
     </div>
   </body>
 </html>
+
