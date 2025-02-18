@@ -1,3 +1,16 @@
+/********************************************************************************
+* WEB322 – Assignment 03
+*
+* I declare that this assignment is my own work in accordance with Seneca's
+* Academic Integrity Policy:
+*
+* https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
+*
+* Name: Turmunkh Davaajargal Student ID: 164138232 Date: 02/18/2025
+*
+* Published (web app) URL:
+*
+********************************************************************************/
 const express = require("express");
 const siteData = require("./modules/data-service");
 const path = require("path");
